@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner n=new Scanner(System.in);
+        
+        String a=n.nextLine();
+        String b=a.substring(a.length()-2,a.length());
+        String x="PM";
+        String y="AM";
+        String c=a.substring(0,2);
+        int e=Integer.parseInt(c);
+        if(b.equals(x)&&e!=12){
+            e=e+12;
+        }
+        if(b.equals(y)&&e==12){
+            e=e-12;
+            
+        }
+        String t=Integer.toString(e);
+         if(t.length()==1){
+            t="0"+t;
+         }
+            System.out.println(t+a.substring(2,a.length()-2));
+    }
+}

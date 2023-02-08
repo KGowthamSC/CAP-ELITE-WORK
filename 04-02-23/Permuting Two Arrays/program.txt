@@ -1,0 +1,47 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+
+    /*
+     * Complete the 'twoArrays' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY A
+     *  3. INTEGER_ARRAY B
+     */
+
+    public static String twoArrays(int k, List<Integer> A, List<Integer> B) {
+        Collections.sort(A);
+        Collections.sort(B);
+        int a1[]=new int[B.size()];
+        int k1=0;
+        for (int i=B.size()-1;i>=0;i--){
+            a1[k1++]=B.get(i);
+        }
+        int co=0;
+        for (int i=0;i<A.size();i++){
+            if ((A.get(i)+a1[i])>=k){
+                co=co+1;
+            }
+            else{
+                co=0;
+            }
+        }
+        if (co==A.size()){
+            return "YES";
+        }
+        else{
+            return "NO";
+        }
+
+    }
+
+}

@@ -1,0 +1,6 @@
+//Write your code here
+        HashSet<String> a=new HashSet<>();
+        for (int i=0;i<t;i++){
+            a.add(pair_left[i]+" "+pair_right[i]);
+            System.out.println(a.size());
+        }

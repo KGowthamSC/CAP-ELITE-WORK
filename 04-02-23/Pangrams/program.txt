@@ -1,0 +1,51 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+
+    /*
+     * Complete the 'pangrams' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
+
+   public static String pangrams(String aa) {
+                String a=aa.toLowerCase();
+        String b=a.replaceAll("\\s","");
+        char a1[]=new char[b.length()];
+        for (int i=0;i<b.length();i++){
+            a1[i]=b.charAt(i);
+        }
+        Set<Character> s1=new HashSet<>();
+        for (int i=0;i<a1.length;i++){
+            s1.add(a1[i]);
+        }
+        int co=0;
+        char a2[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        char l1[]=new char[s1.size()];
+        int k=0;
+        for(char ss:s1){
+            l1[k++]=ss;
+        }
+        for (int i=0;i<a2.length;i++){
+            for(int j=0;j<s1.size();j++){
+                if (a2[i]==l1[j]){
+                    co=co+1;
+                }
+            }
+        }
+        if (co==a2.length){
+            return "pangram";
+        }
+        else{
+            return "not pangram";
+        }
+    }
+
+}

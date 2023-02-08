@@ -1,0 +1,30 @@
+import java.util.*;
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String a=sc.next();
+        char a1[]=new char[a.length()];
+        for (int i=0;i<a.length();i++){
+            a1[i]=a.charAt(i);
+        }
+        HashSet<Character> gg=new HashSet<>();
+        for(int i=0;i<a.length();i++){
+            gg.add(a.charAt(i));
+        }
+        ArrayList<Character> h4=new ArrayList<>();
+        for (Character q:gg){
+            h4.add(q);
+        }
+        String aa="";
+        for (int i=0;i<a.length();i++){
+            for (int j=0;j<h4.size();j++){
+                if (a1[i]==h4.get(j)){
+                    aa=aa+a1[i];
+                    h4.remove(j);
+                }
+            }
+        }
+        System.out.println(aa);
+    }
+}

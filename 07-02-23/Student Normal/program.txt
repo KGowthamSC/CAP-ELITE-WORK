@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Student {
+    Student(String a,int b,String c,int d){
+        System.out.println(b+" "+a+" "+c+" "+d);
+    }
+    public static void main(String[] args) {
+        Scanner n=new Scanner(System.in);
+        int a=n.nextInt();
+        n.nextLine();
+        for (int i=0;i<a;i++){
+            float s1=0;
+            String[] l1=n.nextLine().split(" ");
+            Student d1=new Student(l1[0],Integer.parseInt(l1[1]),l1[2],Integer.parseInt(l1[3]));
+            System.out.print(l1[1]+" ");
+            String[] l2=n.nextLine().split(" ");
+            for (int j=0;j<l2.length;j++){
+                s1=s1+Integer.parseInt(l2[j]);
+            }
+            System.out.printf("%.2f",s1/l2.length);
+            System.out.println();
+        }
+        System.out.print("NoOfStudents="+a);
+    }
+}

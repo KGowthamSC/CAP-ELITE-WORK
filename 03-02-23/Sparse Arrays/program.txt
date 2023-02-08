@@ -1,0 +1,32 @@
+import java.util.*;
+import java.util.ArrayList;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner n=new Scanner(System.in);
+        int a=n.nextInt();
+        String strings[]=new String[a];
+        for(int i=0;i<a;i++){
+            strings[i]=n.next();
+        }
+        int q=n.nextInt();
+        String queries[]=new String[q];
+        for(int i=0;i<q;i++){
+            queries[i]=n.next();
+        }
+        ArrayList<Integer> l1=new ArrayList<>();
+        int c=0;
+        for(int i=0;i<q;i++){
+            for(int j=0;j<a;j++){
+                if(queries[i].equals(strings[j])){
+                    c=c+1;
+                }
+            }
+            l1.add(c);
+            c=0;
+        }
+        for(int i=0;i<l1.size();i++){
+            System.out.println(l1.get(i));
+        }
+    }
+}

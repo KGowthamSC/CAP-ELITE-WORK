@@ -1,0 +1,42 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner n=new Scanner(System.in);
+        int a = n.nextInt();
+        int S[]=new int[a];
+        int P=0;
+        int N=0;
+        int Z=0;
+        for (int i=0;i<a;i++){
+            S[i]=n.nextInt();
+            
+        }
+        
+       for(int i=0;i<a;i++){
+           if (S[i]>0){
+               P++;
+           }
+           else if (S[i]<0){
+               N++;
+           }
+           else{
+               Z++;
+           
+           }
+       }
+       double a1=a;
+       double P1=P;
+       double N1=N;
+       double Z1=Z;
+       
+       double x=P1/a1;
+       double y=N1/a1;
+       double z=Z1/a1;
+       
+    System.out.printf("%6f\n",x);    
+    System.out.printf("%6f\n",y);    
+    System.out.printf("%6f\n",z);    
+
+    }
+}

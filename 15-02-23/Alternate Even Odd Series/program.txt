@@ -1,0 +1,66 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        String b="";
+        for (int i=0;i<a.length();i++){
+            if(Character.isDigit(a.charAt(i))){
+                b=b+a.charAt(i);
+            }
+        }
+        int co=0;
+        for (int i=0;i<a.length();i++){
+            if (Character.isDigit(a.charAt(i)) || Character.isLetter(a.charAt(i))){
+                continue;
+            }
+            else{
+                co=co+1;
+            }
+        }
+        ArrayList<Integer> a1=new ArrayList<>();
+        ArrayList<Integer> a2=new ArrayList<>();
+        for (int i=0;i<b.length();i++){
+            String b2=Character.toString(b.charAt(i));
+            int d1=Integer.parseInt(b2);
+            if (d1%2==0){
+                a1.add(d1);
+            }
+            else{
+                a2.add(d1);
+            }
+        }
+        ArrayList<Integer> ne=new ArrayList<>();
+        for (int i=0;i<a1.size()+a2.size();i++){
+            if (co%2==0){
+                if (i<a1.size() && i<a2.size()){
+                    ne.add(a1.get(i));
+                    ne.add(a2.get(i));
+                }
+                if (i>=a1.size() && i<a2.size()){
+                    ne.add(a2.get(i));
+                }
+                if (i>=a2.size() && i<a1.size()){
+                    ne.add(a1.get(i));
+                }
+            }
+            else{
+                if (i<a1.size() && i<a2.size()){
+                    ne.add(a2.get(i));
+                    ne.add(a1.get(i));
+                }
+                if (i>=a1.size() && i<a2.size()){
+                    ne.add(a2.get(i));
+                }
+                if (i>=a2.size() && i<a1.size()){
+                    ne.add(a1.get(i));
+                }
+            }
+        }
+        String r="";
+        for (int i=0;i<ne.size();i++){
+            r=r+ne.get(i);
+        }
+        System.out.println(r);
+    }
+}
